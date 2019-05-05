@@ -126,3 +126,6 @@ dmypy.json
 
 # VSCode
 .vscode/
+
+# Saídas
+spider/spider/output/
