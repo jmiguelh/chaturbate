@@ -16,7 +16,7 @@ class CamsSpider(scrapy.Spider):
         lista = response.xpath("//*[@id='room_list']/li")
         for cam in lista:
             login = cam.xpath('./a/@href').extract_first().replace('/','')
-            url = response.url + cam.xpath('./a/@href').extract_first()[1:]
+            url = 'https://pt.chaturbate.com/' + cam.xpath('./a/@href').extract_first()[1:]
             if cam.xpath('./div[3]/div/span/text()').extract_first().isnumeric(): 
                 idade = int(cam.xpath('./div[3]/div/span/text()').extract_first())
             else:
@@ -42,4 +42,4 @@ class CamsSpider(scrapy.Spider):
                 'Local' :local,
                 'Espectadores' : espectadores,
                 'Tempo' : tempo,
-                'Calssificação' : classificacao}
+                'Calssificacao' : classificacao}
