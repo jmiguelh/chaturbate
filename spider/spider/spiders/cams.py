@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import datetime
 
 
 class CamsSpider(scrapy.Spider):
@@ -11,6 +12,7 @@ class CamsSpider(scrapy.Spider):
         'https://pt.chaturbate.com/trans-cams/']
 
     def parse(self, response):
+        datahora = str(datetime.datetime.now())
         lista = response.xpath("//*[@id='room_list']/li")
         for cam in lista:
             login = cam.xpath('./a/@href').extract_first().replace('/','')
@@ -29,9 +31,10 @@ class CamsSpider(scrapy.Spider):
                 tempo = float(dados[0].replace(',','.'))
             classificacao = cam.xpath('./div[2]/text()').extract_first()
             
-            #self.log("Login: {0} - URL: {1} - Idade: {2} - Sexo: {3} - Local: {4} - Espectadores: {5} - Tempo: {6} -  Classificação: {7}".format(login, url,idade,sexo,local,espectadores,tempo,classificacao))
+            #self.log(",{7}".format(login, url,idade,sexo,local,espectadores,tempo,classificacao))
             
             yield{
+                'DataHora' : datahora,
                 'Login' : login, 
                 'URL' : url,
                 'Idade' : idade,
