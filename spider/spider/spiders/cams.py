@@ -5,7 +5,10 @@ import scrapy
 class CamsSpider(scrapy.Spider):
     name = 'cams'
     allowed_domains = ['chaturbate.com']
-    start_urls = ['https://pt.chaturbate.com/']
+    start_urls = ['https://pt.chaturbate.com/female-cams/', 
+        'https://pt.chaturbate.com/male-cams/',
+        'https://pt.chaturbate.com/couple-cams/',
+        'https://pt.chaturbate.com/trans-cams/']
 
     def parse(self, response):
         lista = response.xpath("//*[@id='room_list']/li")
@@ -26,5 +29,14 @@ class CamsSpider(scrapy.Spider):
                 tempo = float(dados[0].replace(',','.'))
             classificacao = cam.xpath('./div[2]/text()').extract_first()
             
-            self.log("Login: {0} - URL: {1} - Idade: {2} - Sexo: {3} - Local: {4} - Espectadores: {5} - Tempo: {6} -  Classificação: {7}".format(login, url,idade,sexo,local,espectadores,tempo,classificacao))
+            #self.log("Login: {0} - URL: {1} - Idade: {2} - Sexo: {3} - Local: {4} - Espectadores: {5} - Tempo: {6} -  Classificação: {7}".format(login, url,idade,sexo,local,espectadores,tempo,classificacao))
             
+            yield{
+                'Login' : login, 
+                'URL' : url,
+                'Idade' : idade,
+                'Sexo' : sexo,
+                'Local' :local,
+                'Espectadores' : espectadores,
+                'Tempo' : tempo,
+                'Calssificação' : classificacao}
