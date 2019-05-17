@@ -7,7 +7,9 @@ try:
             'runspider',
             'spider/spider/spiders/cams.py',
             '-o',
-            'spider/spider/output/cams.json',
+            'spider/spider/output/cams.csv',
+            '-t',
+            'csv'
         ]
     )
 except SystemExit:
