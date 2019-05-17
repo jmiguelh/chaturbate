@@ -128,4 +128,4 @@ dmypy.json
 .vscode/
 
 # Saídas
-spider/spider/output/
+#spider/spider/output/*.json
