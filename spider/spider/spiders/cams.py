@@ -29,7 +29,7 @@ class CamsSpider(scrapy.Spider):
                 tempo =float(int(dados[0])/60)
             else:
                 tempo = float(dados[0].replace(',','.'))
-            classificacao = cam.xpath('./div[2]/text()').extract_first()
+            classificacao = cam.xpath('./div[2]/text()').extract_first().replace('\n', ' ')
             
             #self.log(",{7}".format(login, url,idade,sexo,local,espectadores,tempo,classificacao))
             
