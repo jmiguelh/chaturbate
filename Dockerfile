@@ -13,5 +13,5 @@ WORKDIR /chaturbate
 RUN pip install -r requirements.txt
 
 VOLUME [ "/chaturbate" ]
-ENTRYPOINT [ "python" ]
-CMD ["runner.py"]
+ENTRYPOINT [ "python", "runner.py" ]
+#CMD ["runner.py"]
