@@ -12,6 +12,6 @@ RUN git clone https://github.com/jmiguelh/chaturbate.git chaturbate
 WORKDIR /chaturbate
 RUN pip install -r requirements.txt
 
-VOLUME [ "/chaturbate" ]
+#VOLUME [ "/chaturbate" ]
 ENTRYPOINT [ "python", "runner.py" ]
 #CMD ["runner.py"]
