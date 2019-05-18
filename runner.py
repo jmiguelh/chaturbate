@@ -7,7 +7,7 @@ try:
             'runspider',
             'spider/spider/spiders/cams.py',
             '-o',
-            'spider/spider/output/cams.csv',
+            'dados/cams.csv',
             '-t',
             'csv'
         ]
