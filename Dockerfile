@@ -6,7 +6,16 @@ LABEL creator jmiguelh <jmh@jmh.com.br>
 LABEL dockerfile_maintenance jmiguelh
 LABEL desc "Scrapy Chaturbate.com"
 
-RUN apk add --no-cache python3-dev gcc make openssl-dev libxml2-dev libxslt-dev libffi-dev musl-dev git
+RUN apk add --no-cache \
+    python3-dev \
+    gcc \
+    make \
+    openssl-dev \
+    libxml2-dev \
+    libxslt-dev \
+    libffi-dev \
+    musl-dev \
+    git
 RUN pip install --upgrade pip
 RUN git clone https://github.com/jmiguelh/chaturbate.git chaturbate
 WORKDIR /chaturbate
