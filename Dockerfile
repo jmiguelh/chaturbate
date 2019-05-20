@@ -4,7 +4,7 @@ LABEL name jmiguelh/chaturbate
 LABEL src "https://github.com/jmiguelh/chaturbate"
 LABEL creator jmiguelh <jmh@jmh.com.br>
 LABEL dockerfile_maintenance jmiguelh
-LABEL desc "Teste de Scrapy"
+LABEL desc "Scrapy Chaturbate.com"
 
 RUN apk add --no-cache python3-dev gcc make openssl-dev libxml2-dev libxslt-dev libffi-dev musl-dev git
 RUN pip install --upgrade pip
