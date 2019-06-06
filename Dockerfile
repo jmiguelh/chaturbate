@@ -5,11 +5,11 @@ LABEL src "https://github.com/jmiguelh/chaturbate"
 LABEL creator jmiguelh <jmh@jmh.com.br>
 LABEL dockerfile_maintenance jmiguelh
 LABEL desc "Scrapy Chaturbate.com"
-LABEL version="0.0.2"
+LABEL version="0.0.3"
 
 #RUN pip install --upgrade pip
 RUN apk add --no-cache git --virtual mypacks \
-    && git clone https://github.com/jmiguelh/chaturbate.git chaturbate \
+    && git clone -b Firebase https://github.com/jmiguelh/chaturbate.git chaturbate \
     && apk del mypacks
 WORKDIR /chaturbate
 RUN apk add --no-cache \
@@ -18,6 +18,7 @@ RUN apk add --no-cache \
     libffi-dev 
 RUN apk add --no-cache --virtual mypacks \
     python3-dev \
+    build-base \
     gcc \
     make \
     openssl-dev \
