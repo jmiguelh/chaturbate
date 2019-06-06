@@ -7,15 +7,17 @@ LABEL dockerfile_maintenance jmiguelh
 LABEL desc "Scrapy Chaturbate.com"
 LABEL version="0.0.3"
 
-#RUN pip install --upgrade pip
 RUN apk add --no-cache git --virtual mypacks \
     && git clone -b Firebase https://github.com/jmiguelh/chaturbate.git chaturbate \
     && apk del mypacks
-WORKDIR /chaturbate
+
+WORKDIR /chaturbate/spider
+
 RUN apk add --no-cache \
     libxml2-dev \
     libxslt-dev \
     libffi-dev 
+
 RUN apk add --no-cache --virtual mypacks \
     python3-dev \
     build-base \
@@ -26,6 +28,6 @@ RUN apk add --no-cache --virtual mypacks \
     && pip install -r requirements.txt \
     && apk del mypacks
 
-#VOLUME [ "/chaturbate" ]
-ENTRYPOINT [ "python", "runner.py" ]
-#CMD ["runner.py"]
+ADD spider/sincere-charmer-137218-firebase-adminsdk-t7g8n-1a5497bdad.json /chaturbate/spider
+
+ENTRYPOINT [ "scrapy", "crawl", "cams" ]
