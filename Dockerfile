@@ -16,7 +16,8 @@ WORKDIR /chaturbate/spider
 RUN apk add --no-cache \
     libxml2-dev \
     libxslt-dev \
-    libffi-dev 
+    libffi-dev \
+    libstdc++ 
 
 RUN apk add --no-cache --virtual mypacks \
     python3-dev \
@@ -25,7 +26,7 @@ RUN apk add --no-cache --virtual mypacks \
     make \
     openssl-dev \
     musl-dev \
-    && pip install -r /chaturbate/requirements.txt \
+    && pip --no-cache-dir install -r /chaturbate/requirements.txt \
     && apk del mypacks
 
 ADD spider/sincere-charmer-137218-firebase-adminsdk-t7g8n-1a5497bdad.json /chaturbate/spider
