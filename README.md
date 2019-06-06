@@ -21,3 +21,11 @@ Rodar imagem:
 
 Executar o spider:  
  `scrapy crawl cams` 
+
+ 
+
+## Versões
+
+ * 0.0.1: Captura das cams ativas.
+ * 0.0.2: Implmentação da imagem Docker. Versão de prodção com captura das cams ativas e output em .csv
+ * 0.0.3: Utilização do Firebase como banco de dados das cams.
