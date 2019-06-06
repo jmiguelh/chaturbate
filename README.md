@@ -15,4 +15,9 @@ Baixar imagem:
  `docker pull jmiguelh/chaturbate` 
 
 Rodar imagem:  
- `docker run -v $PWD/dados:/chaturbate/dados jmiguelh/chaturbate` 
+ `docker run -v $PWD/dados:/chaturbate/dados  --rm jmiguelh/chaturbate` 
+
+## Scrapy
+
+Executar o spider:  
+ `scrapy crawl cams` 
