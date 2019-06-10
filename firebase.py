@@ -36,5 +36,5 @@ def formataResposta(resposta):
 
 if __name__ == "__main__":
     login = input("Digite o login: ")
-    quantidade = int(input("Quantidade: "))
-    print(buscarUltimasTemperaturas(login, quantidade))
+    # quantidade = int(input("Quantidade: "))
+    print(buscarUltimasTemperaturas(login))

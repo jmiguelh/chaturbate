@@ -12,7 +12,7 @@ class CamsSpider(scrapy.Spider):
                   'https://pt.chaturbate.com/trans-cams/']
 
     def parse(self, response):
-        datahora = str(datetime.datetime.now())
+        datahora = datetime.datetime.now()
         lista = response.xpath("//*[@id='room_list']/li")
         for cam in lista:
             login = cam.xpath('./a/@href').extract_first().replace('/', '')
