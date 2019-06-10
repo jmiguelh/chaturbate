@@ -16,7 +16,7 @@ def conectarFirebase():
 def buscarUltimasTemperaturas(login, quantidade=50):
     db = conectarFirebase()
 
-    cams = db.collection(u'chaturbate')
+    cams = db.collection(u'chaturbate2')
     query = cams.where(
         u'Login', u'==', login).order_by(
         u'DataHora', direction=firestore.Query.DESCENDING).limit(quantidade)

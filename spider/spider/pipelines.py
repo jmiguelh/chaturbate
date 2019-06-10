@@ -13,7 +13,7 @@ from firebase_admin import firestore
 
 class SpiderPipeline(object):
     def process_item(self, item, spider):
-        self.db.collection(u'chaturbate').document().set(dict(item))
+        self.db.collection(u'chaturbate2').document().set(dict(item))
         return item
 
     def open_spider(self, spider):
@@ -21,4 +21,3 @@ class SpiderPipeline(object):
             'sincere-charmer-137218-firebase-adminsdk-t7g8n-1a5497bdad.json')
         firebase_admin.initialize_app(cred)
         self.db = firestore.client()
-        

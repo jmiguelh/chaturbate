@@ -5,10 +5,10 @@ LABEL src "https://github.com/jmiguelh/chaturbate"
 LABEL creator jmiguelh <jmh@jmh.com.br>
 LABEL dockerfile_maintenance jmiguelh
 LABEL desc "Scrapy Chaturbate.com"
-LABEL version="0.1.2"
+LABEL version="0.1.3"
 
 RUN apk add --no-cache git --virtual mypacks \
-    && git clone -b 0.1.2 https://github.com/jmiguelh/chaturbate.git chaturbate \
+    && git clone -b 0.1.3 https://github.com/jmiguelh/chaturbate.git chaturbate \
     && apk del mypacks
 
 WORKDIR /chaturbate/spider
