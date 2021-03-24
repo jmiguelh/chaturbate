@@ -37,7 +37,7 @@ pyOpenSSL==19.0.0
 pytz==2019.1
 queuelib==1.5.0
 requests==2.22.0
-rsa==4.0
+rsa==4.1
 Scrapy==1.6.0
 service-identity==18.1.0
 six==1.12.0
