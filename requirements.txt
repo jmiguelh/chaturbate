@@ -38,7 +38,7 @@ pytz==2019.1
 queuelib==1.5.0
 requests==2.22.0
 rsa==4.7
-Scrapy==1.6.0
+Scrapy==1.8.1
 service-identity==18.1.0
 six==1.12.0
 Twisted==19.2.1
