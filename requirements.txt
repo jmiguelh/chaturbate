@@ -36,7 +36,7 @@ PyHamcrest==1.9.0
 pyOpenSSL==19.0.0
 pytz==2019.1
 queuelib==1.5.0
-requests==2.31.0
+requests==2.32.0
 rsa==4.7
 Scrapy==2.11.1
 service-identity==18.1.0
