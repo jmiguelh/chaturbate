@@ -41,7 +41,7 @@ rsa==4.7
 Scrapy==2.11.2
 service-identity==18.1.0
 six==1.12.0
-Twisted==23.10.0
+Twisted==24.7.0
 uritemplate==3.0.0
 urllib3==1.26.19
 w3lib==1.20.0
